@@ -17,10 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/users" element={<UsersPage />} />
-            <Analytics />
           </Routes>
         </div>
       </div>
+      <Analytics />
     </Router>
   );
 }
