@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 import UsersPage from "./pages/UsersPage";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/users" element={<UsersPage />} />
+            <Analytics />
           </Routes>
         </div>
       </div>
