@@ -1,4 +1,4 @@
-import { BarChart, Bar, ResponsiveContainer, Tooltip, Legend } from "recharts";
+import { BarChart, Bar, ResponsiveContainer, Tooltip, Legend, type LegendPayload } from "recharts";
 
 const data = [
   { name: "1", volume: 60, services: 40 },
@@ -39,27 +39,35 @@ export default function VolumeServiceLevel() {
                 const { payload } = props;
                 return (
                   <div className="flex justify-center items-center gap-0 pt-6 border-t border-gray-50 mt-4">
-                    {payload?.map((entry: { color: string; value: string }, index: number) => (
-                      <div key={`item-${index}`} className="flex items-center">
-                        <div className="flex flex-col items-center px-6">
-                          <div className="flex items-center gap-2">
-                            <div
-                              className="w-2 h-2 rounded-full"
-                              style={{ backgroundColor: entry.color }}
-                            ></div>
-                            <span className="text-xs text-[#737791] font-semibold capitalize">
-                              {entry.value}
+                    {payload?.map(
+                      (
+                        entry: LegendPayload,
+                        index: number,
+                      ) => (
+                        <div
+                          key={`item-${index}`}
+                          className="flex items-center"
+                        >
+                          <div className="flex flex-col items-center px-6">
+                            <div className="flex items-center gap-2">
+                              <div
+                                className="w-2 h-2 rounded-full"
+                                style={{ backgroundColor: entry.color }}
+                              ></div>
+                              <span className="text-xs text-[#737791] font-semibold capitalize">
+                                {entry.value}
+                              </span>
+                            </div>
+                            <span className="text-sm font-bold text-[#151D48] mt-1">
+                              {entry.value === "volume" ? "1,135" : "635"}
                             </span>
                           </div>
-                          <span className="text-sm font-bold text-[#151D48] mt-1">
-                            {entry.value === "volume" ? "1,135" : "635"}
-                          </span>
+                          {index === 0 && (
+                            <div className="h-8 w-px bg-gray-200"></div>
+                          )}
                         </div>
-                        {index === 0 && (
-                          <div className="h-8 w-px bg-gray-200"></div>
-                        )}
-                      </div>
-                    ))}
+                      ),
+                    )}
                   </div>
                 );
               }}

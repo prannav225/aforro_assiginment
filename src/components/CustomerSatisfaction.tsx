@@ -4,6 +4,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   Legend,
+  type LegendPayload,
 } from "recharts";
 
 const data = [
@@ -74,7 +75,7 @@ export default function CustomerSatisfaction() {
                 const { payload } = props;
                 return (
                   <div className="flex justify-center items-center gap-0 pt-6 border-t border-gray-50 mt-4">
-                    {payload?.map((entry: { color: string; value: string }, index: number) => (
+                    {payload?.map((entry: LegendPayload, index: number) => (
                       <div key={`item-${index}`} className="flex items-center">
                         <div className="flex flex-col items-center px-6">
                           <div className="flex items-center gap-2">
