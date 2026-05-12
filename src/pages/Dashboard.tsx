@@ -1,11 +1,11 @@
-import TodaySales from '../components/TodaySales';
-import VisitorInsights from '../components/VisitorInsights';
-import TotalRevenue from '../components/TotalRevenue';
-import CustomerSatisfaction from '../components/CustomerSatisfaction';
-import TargetVsReality from '../components/TargetVsReality';
-import TopProducts from '../components/TopProducts';
-import SalesMapping from '../components/SalesMapping';
-import VolumeServiceLevel from '../components/VolumeServiceLevel';
+import TodaySales from "../components/Dashboard/TodaySales";
+import VisitorInsights from "../components/Dashboard/VisitorInsights";
+import TotalRevenue from "../components/Dashboard/TotalRevenue";
+import CustomerSatisfaction from "../components/Dashboard/CustomerSatisfaction";
+import TargetVsReality from "../components/Dashboard/TargetVsReality";
+import TopProducts from "../components/Dashboard/TopProducts";
+import SalesMapping from "../components/Dashboard/SalesMapping";
+import VolumeServiceLevel from "../components/Dashboard/VolumeServiceLevel";
 
 const Dashboard = () => (
   <main className="flex-1 overflow-y-auto p-8 pt-2">
