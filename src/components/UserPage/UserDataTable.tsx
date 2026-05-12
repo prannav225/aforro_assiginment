@@ -51,10 +51,9 @@ export default function UserDataTable() {
     fetchUsers();
   }, []);
 
-  const cities = [
-    "Filter by City",
-    ...new Set(users.map((u) => u.address.city)),
-  ];
+  const cities = useMemo(() => {
+    return ["Filter by City", ...new Set(users.map((u) => u.address.city))];
+  }, [users]);
 
   const filteredUsers = useMemo(() => {
     const lowerQuery = searchQuery.toLowerCase();
